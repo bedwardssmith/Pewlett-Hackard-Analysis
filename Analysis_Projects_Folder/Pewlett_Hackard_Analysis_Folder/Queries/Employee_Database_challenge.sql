@@ -69,21 +69,33 @@ FROM dept_retirements as dr
 GROUP BY dept_name, title
 ORDER BY dept_name
 
+-- Eligible Retirement Countr per department
+SELECT COUNT (dr.emp_no), dr.dept_name
+INTO retirement_dept
+FROM dept_retirements as dr
+GROUP BY dept_name
+ORDER BY COUNT DESC
+
 -- Employees who are not eligible for employment including title and department name
-SELECT COUNT (dr.emp_no), dr.dept_name, dr.title 
+SELECT COUNT (ne.emp_no), ne.dept_name, ne.title 
 INTO noneligible_dept_title
-FROM dept_retirements as dr
+FROM noneligible as ne
 GROUP BY dept_name, title
 ORDER BY dept_name
 
--- Employees who are not eligible for employment summarized by department
-SELECT COUNT (dr.emp_no), dr.dept_name, dr.title 
-INTO noneligible_dept_title
-FROM dept_retirements as dr
-GROUP BY dept_name, title
-ORDER BY dept_name
+-- Employees who are not eligible for retirement summarized by department
+SELECT COUNT (ne.emp_no), ne.dept_name
+INTO noneligible_dept
+FROM noneligible as ne
+GROUP BY dept_name
+ORDER BY COUNT DESC
 
-
+-- Employees who are not eligible for retirement summarized by title
+SELECT COUNT (ne.emp_no), ne.title
+INTO noneligible_title
+FROM noneligible as ne
+GROUP BY title
+ORDER BY COUNT DESC
 
 
 
