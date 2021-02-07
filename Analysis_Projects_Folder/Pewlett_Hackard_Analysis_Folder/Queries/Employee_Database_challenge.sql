@@ -2,13 +2,13 @@
 SELECT e.emp_no,
 	e.first_name,
 	e.last_name,
-	t.title,
-    t.from_date,
-    t.to_date
+    ti.title,
+    ti.from_date,
+    ti. to_date
 INTO retirement_titles
 FROM employees as e
-    INNER JOIN titles as t
-        ON (e.emp_no = t.emp_no)
+    INNER JOIN titles as ti
+        ON (e.emp_no = ti.emp_no)
 WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31') 
 ORDER BY emp_no;
 
@@ -46,6 +46,42 @@ WHERE (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 AND ut.to_date = ('9999-01-01')
 ORDER by emp_no;
 
+
+-- Employees elgibiel for retirement including title and department name
+SELECT e.emp_no,
+	e.first_name,
+	e.last_name,
+	ut.title,
+	di.dept_name
+INTO dept_retirements
+FROM employees as e
+	INNER JOIN unique_titles as ut
+		ON (e.emp_no = ut.emp_no)
+	INNER JOIN dept_info as di
+		ON (e.emp_no = di.emp_no)
+WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+ORDER BY emp_no;
+
+-- Eligible Retirement Count per department and level
+SELECT COUNT (dr.emp_no), dr.dept_name, dr.title 
+INTO retirement_dept_title
+FROM dept_retirements as dr
+GROUP BY dept_name, title
+ORDER BY dept_name
+
+-- Employees who are not eligible for employment including title and department name
+SELECT COUNT (dr.emp_no), dr.dept_name, dr.title 
+INTO noneligible_dept_title
+FROM dept_retirements as dr
+GROUP BY dept_name, title
+ORDER BY dept_name
+
+-- Employees who are not eligible for employment summarized by department
+SELECT COUNT (dr.emp_no), dr.dept_name, dr.title 
+INTO noneligible_dept_title
+FROM dept_retirements as dr
+GROUP BY dept_name, title
+ORDER BY dept_name
 
 
 
