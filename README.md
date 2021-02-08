@@ -26,7 +26,7 @@ Pewlett-Hackard is contemplating a mentorship program which would have experienc
 
 ![ineligible for retirement by department](https://github.com/bedwardssmith/Pewlett-Hackard-Analysis/blob/main/Analysis_Projects_Folder/Pewlett_Hackard_Analysis_Folder/Data/ineligible_dept_sum.png)
 
-![count of employees eligible for mentorship program](
+
 
 
 
