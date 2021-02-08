@@ -47,35 +47,44 @@ AND ut.to_date = ('9999-01-01')
 ORDER by emp_no;
 
 -----EXTRA ANALYSIS
--- Add dept no to unique titles table
+-- Create retirement_titles which contains the employee number, first and last names, and department
 SELECT e.emp_no,
 	e.first_name,
 	e.last_name,
-    ut.title,
-	de. dept_no
-INTO retirement_titles_based_on_unique
+    ti.title,
+    ti.from_date,
+    ti. to_date,
+    de.dept_no,
+    dep.dept_name
+INTO retirement_dept
 FROM employees as e
-    INNER JOIN unique_titles as ut
-        ON (e.emp_no = ut.emp_no)
-	INNER JOIN dept_emp as de
-		ON (e.emp_no = de.emp_no)
+    INNER JOIN titles as ti
+        ON (e.emp_no = ti.emp_no)
+    INNER JOIN dept_emp as de
+        ON (e.emp_no = de.emp_no)
+    INNER JOIN departments as dep
+        ON (de.dept_no = dep.dept_no)
+WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31') 
 ORDER BY emp_no;
 
 -- remove duplicate rows where employee has changed departments
-SELECT DISTINCT ON (rtu.emp_no) rtu.emp_no,
-    rtu.first_name,
-    rtu.last_name,
-    rtu.dept_no
-INTO unique_dep
-    FROM retirement_titles_based_on_unique as rtu
-ORDER BY emp_no ASC;
+SELECT DISTINCT ON (rd.emp_no) rd.emp_no,
+    rd.first_name,
+    rd.last_name,
+    rd.dept_name
+INTO unique_dept
+    FROM retirement_dept as rd
+ORDER BY emp_no ASC, to_date DESC;
 
 -- group employees eligible for retirement by dept no
-SELECT COUNT (ur.emp_no), ur.dept_no
-INTO retiring_dept
-    FROM unique_dep as ur
-GROUP BY dept_no
+SELECT COUNT (ud.emp_no), ud.dept_name
+INTO retiring_dept_sum
+    FROM unique_dept as ud
+GROUP BY dept_name
 ORDER by count DESC;
+
+
+
 
 
 -----THIS IS NOT WORKING
