@@ -46,14 +46,17 @@ WHERE (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 AND ut.to_date = ('9999-01-01')
 ORDER by emp_no;
 
+
+
 -----EXTRA ANALYSIS
+--------------------------------------
 -- Create retirement_titles which contains the employee number, first and last names, and department
 SELECT e.emp_no,
 	e.first_name,
 	e.last_name,
     ti.title,
     ti.from_date,
-    ti. to_date,
+    ti.to_date,
     de.dept_no,
     dep.dept_name
 INTO retirement_dept
@@ -83,18 +86,16 @@ INTO retiring_dept_sum
 GROUP BY dept_name
 ORDER by count DESC;
 
-
---------NOT WORKING
--- Create ineligible_titles which contains the employee number, first and last names, titles, dept name and title
+-- Create ineligible_titles_dept which contains the employee number, first and last names, and department
 SELECT e.emp_no,
 	e.first_name,
 	e.last_name,
     ti.title,
     ti.from_date,
-    ti. to_date,
+    ti.to_date,
     de.dept_no,
     dep.dept_name
-INTO ineligible_employees
+INTO ineligible_titles_dept
 FROM employees as e
     INNER JOIN titles as ti
         ON (e.emp_no = ti.emp_no)
@@ -102,32 +103,32 @@ FROM employees as e
         ON (e.emp_no = de.emp_no)
     INNER JOIN departments as dep
         ON (de.dept_no = dep.dept_no)
-WHERE (birth_date BETWEEN '1900-01-01' AND '1951-12-31') 
+WHERE (birth_date BETWEEN '1956-01-01' AND '9999-12-31') 
 ORDER BY emp_no;
 
 -- remove duplicate rows where employee has changed titles
-SELECT DISTINCT ON (ine.emp_no) ine.emp_no,
-    ine.first_name,
-    ine.last_name,
-    ine.title,
-	ine.dept_name
-INTO ineligible_titles_dept_unique
-    FROM ineligible_employees as ine
+SELECT DISTINCT ON (itd.emp_no) itd.emp_no,
+    itd.first_name,
+    itd.last_name,
+    itd.title,
+	itd.dept_name
+INTO ineligible_titlesunique
+    FROM ineligible_titles_dept as itd
 ORDER BY emp_no ASC;
 
 -- group non eligible employees by dept no
 SELECT COUNT (itdu.emp_no), itdu.dept_name
 INTO ineligible_dept_sum
-    FROM ineligible_titles_dept_unique as itdu
+    FROM ineligible_titlesunique as itdu
 GROUP BY dept_name
 ORDER by count DESC;
 
------THIS IS NOT WORKING
 -- group non eligible employees by title
-SELECT COUNT (ur.emp_no), ur.dept_no
-INTO noneligible_title
-    FROM unique_titles as ur
+SELECT COUNT (it.emp_no), it.title
+INTO ineligible_title_sum
+    FROM ineligible_titlesunique as it
 GROUP BY title
 ORDER by count DESC;
+
 
 
