@@ -26,7 +26,7 @@ SELECT COUNT (ut.emp_no), ut.title
 INTO retiring_titles
     FROM unique_titles as ut
 GROUP BY title 
-ORDER by count DESC
+ORDER by count DESC;
 
 -- Employees eligible to participate in a mentorship program
 SELECT DISTINCT ON (e.emp_no) e.emp_no,
@@ -46,56 +46,77 @@ WHERE (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 AND ut.to_date = ('9999-01-01')
 ORDER by emp_no;
 
-
--- Employees elgibiel for retirement including title and department name
+-----EXTRA ANALYSIS
+-- Add dept no to unique titles table
 SELECT e.emp_no,
 	e.first_name,
 	e.last_name,
-	ut.title,
-	di.dept_name
-INTO dept_retirements
+    ut.title,
+	de. dept_no
+INTO retirement_titles_based_on_unique
 FROM employees as e
-	INNER JOIN unique_titles as ut
-		ON (e.emp_no = ut.emp_no)
-	INNER JOIN dept_info as di
-		ON (e.emp_no = di.emp_no)
-WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+    INNER JOIN unique_titles as ut
+        ON (e.emp_no = ut.emp_no)
+	INNER JOIN dept_emp as de
+		ON (e.emp_no = de.emp_no)
 ORDER BY emp_no;
 
--- Eligible Retirement Count per department and level
-SELECT COUNT (dr.emp_no), dr.dept_name, dr.title 
-INTO retirement_dept_title
-FROM dept_retirements as dr
-GROUP BY dept_name, title
-ORDER BY dept_name
+-- remove duplicate rows where employee has changed departments
+SELECT DISTINCT ON (rtu.emp_no) rtu.emp_no,
+    rtu.first_name,
+    rtu.last_name,
+    rtu.dept_no
+INTO unique_dep
+    FROM retirement_titles_based_on_unique as rtu
+ORDER BY emp_no ASC;
 
--- Eligible Retirement Countr per department
-SELECT COUNT (dr.emp_no), dr.dept_name
-INTO retirement_dept
-FROM dept_retirements as dr
-GROUP BY dept_name
-ORDER BY COUNT DESC
+-- group employees eligible for retirement by dept no
+SELECT COUNT (ur.emp_no), ur.dept_no
+INTO retiring_dept
+    FROM unique_dep as ur
+GROUP BY dept_no
+ORDER by count DESC;
 
--- Employees who are not eligible for employment including title and department name
-SELECT COUNT (ne.emp_no), ne.dept_name, ne.title 
-INTO noneligible_dept_title
-FROM noneligible as ne
-GROUP BY dept_name, title
-ORDER BY dept_name
 
--- Employees who are not eligible for retirement summarized by department
-SELECT COUNT (ne.emp_no), ne.dept_name
+-----THIS IS NOT WORKING
+-- Create ineligible_titles which contains the employee number, first and last names, and titles-- 
+SELECT e.emp_no,
+	e.first_name,
+	e.last_name,
+    ti.title,
+    ti.from_date,
+    ti. to_date,
+    de.dept_no
+INTO noneligible_titles
+FROM employees as e
+    INNER JOIN titles as ti
+        ON (e.emp_no = ti.emp_no)
+    INNER JOIN dept_emp as de
+        ON (e.emp_no = de.emp_no)
+WHERE (birth_date BETWEEN '1900-01-01' AND '1951-12-31') 
+ORDER BY emp_no;	
+
+-- remove duplicate rows where employee has changed titles
+SELECT DISTINCT ON non.emp_no) non.emp_no,
+    non.first_name,
+    non.last_name,
+    non.title
+INTO noneligible_titles_unique
+    FROM noneligible_titles as non
+ORDER BY emp_no ASC;
+
+-- group non eligible employees by dept no
+SELECT COUNT (ur.emp_no), ur.dept_no
 INTO noneligible_dept
-FROM noneligible as ne
-GROUP BY dept_name
-ORDER BY COUNT DESC
+    FROM unique_titles as ur
+GROUP BY dept_no
+ORDER by count DESC;
 
--- Employees who are not eligible for retirement summarized by title
-SELECT COUNT (ne.emp_no), ne.title
+-- group non eligible employees by title
+SELECT COUNT (ur.emp_no), ur.dept_no
 INTO noneligible_title
-FROM noneligible as ne
+    FROM unique_titles as ur
 GROUP BY title
-ORDER BY COUNT DESC
-
+ORDER by count DESC;
 
 
