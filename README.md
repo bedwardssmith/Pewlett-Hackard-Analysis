@@ -9,15 +9,15 @@ Pewlett-Hackard has realized that they are facing a period where they will exper
 * titles.cvs, dept_emp.cvs, dept_manager.cvs, employees.cvs, salaries.cvs, titles.cvs
 
 # Results
-  
-__Count per title of employees eligible for retirement - Figure 1__
-The count per title of employees eligible for retirement provides a summary of current employees, by title, that were born between the years 1952 and 1955.  Three points can be drawn from this analysis.
 
-** There are 29,414 Senior Engineers eligible for retirement which is a significant and alarming number.  Given this number further analysis is required to determine whether there are sufficient resources at the Engineer level that through career progression will grow to fulfill the resource requirements of the future.
+##Count per title of employees eligible for retirement - Figure 1
+*The count per title of employees eligible for retirement provides a summary of current employees, by title, that were born between the years 1952 and 1955.  Three points can be drawn from this analysis.
 
-** The summary also shows that 28,254 Senior Staff are eligible for retirement which is once again an alarming number requiring futher analysis.  
+**There are 29,414 Senior Engineers eligible for retirement which is a significant and alarming number.  Given this number further analysis is required to determine whether there are sufficient resources at the Engineer level that through career progression will grow to fulfill the resource requirements of the future.
 
-** The final point that can be drawn from this summary is that lower levels, such as Staff and Engineer, have a significantly lower number of individuals eligible for retirement which would be expected as these employees are typically younger and at the start of their careers.  
+**The summary also shows that 28,254 Senior Staff are eligible for retirement which is once again an alarming number requiring futher analysis.  
+
+**The final point that can be drawn from this summary is that lower levels, such as Staff and Engineer, have a significantly lower number of individuals eligible for retirement which would be expected as these employees are typically younger and at the start of their careers.  
 
 __*Figure 1*__
 
