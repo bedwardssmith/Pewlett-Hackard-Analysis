@@ -1,40 +1,43 @@
 
 
-# Pewlett-Hackard-Analysis
+<h1>Pewlett-Hackard-Analysis</h1>
 Pewlett-Hackard has realized that they are facing a period where they will experience an unprecendented number of employees eligible for retirement.  Analysis has therefore been undertaken to better understand the future employment needs as well as to understand what can be done now to ensure that employees ineligible for retirement are ready to take on the challenge of replacing those that choose to retire.
 
-# Resources
-* PgAdmin version 4.28
-* PostgreSQL verison 13
-* titles.cvs, dept_emp.cvs, dept_manager.cvs, employees.cvs, salaries.cvs, titles.cvs
+<h1>Resources</h1>
+<ul>
+  <li>PgAdmin version 4.28</li>
+  <li>PostgreSQL verison 13</li>
+  <li>titles.cvs, dept_emp.cvs, dept_manager.cvs, employees.cvs, salaries.cvs, titles.cvs</li>
 
-# Results
+<h1>Results</h1>
 
-##Count per title of employees eligible for retirement - Figure 1
-*The count per title of employees eligible for retirement provides a summary of current employees, by title, that were born between the years 1952 and 1955.  Three points can be drawn from this analysis.
+<h2>Count per title of employees eligible for retirement - Figure 1</h2>
+The count per title of employees eligible for retirement provides a summary of current employees, by title, that were born between the years 1952 and 1955.  Three points can be drawn from this analysis.
 
-**There are 29,414 Senior Engineers eligible for retirement which is a significant and alarming number.  Given this number further analysis is required to determine whether there are sufficient resources at the Engineer level that through career progression will grow to fulfill the resource requirements of the future.
+<ul>
+<li>There are 29,414 Senior Engineers eligible for retirement which is a significant and alarming number.  Given this number further analysis is required to determine whether there are sufficient resources at the Engineer level that through career progression will grow to fulfill the resource requirements of the future.</li>
 
-**The summary also shows that 28,254 Senior Staff are eligible for retirement which is once again an alarming number requiring futher analysis.  
+<li>The summary also shows that 28,254 Senior Staff are eligible for retirement which is once again an alarming number requiring futher analysis.</li>
 
-**The final point that can be drawn from this summary is that lower levels, such as Staff and Engineer, have a significantly lower number of individuals eligible for retirement which would be expected as these employees are typically younger and at the start of their careers.  
-
-__*Figure 1*__
+<li>The final point that can be drawn from this summary is that lower levels, such as Staff and Engineer, have a significantly lower number of individuals eligible for retirement which would be expected as these employees are typically younger and at the start of their careers.</li>  
+</ul>
+<b><i>Figure 1</b></i>
 
 ![eligible for retirement by titles](https://github.com/bedwardssmith/Pewlett-Hackard-Analysis/blob/main/Analysis_Projects_Folder/Pewlett_Hackard_Analysis_Folder/Data/retiring_titles_sum.png)
 
 
-__Employees eligible for the mentorship program__
+<b>Employees eligible for the mentorship program</b>
 As part of the analysis a table was created that comprises current employees that were born in 1965. 
 
-** The eligibility for retirement by title shows us that there are a significant number of employees at senior levels eligible for retirement, 90,398 in total.  However, the employees eligible for the mentorship program, based on currrent eligiblity, are 1,549 which is only 1.7% of the total eligible employees.
+<ul>
+<li>The eligibility for retirement by title shows us that there are a significant number of employees at senior levels eligible for retirement, 90,398 in total.  However, the employees eligible for the mentorship program, based on currrent eligiblity, are 1,549 which is only 1.7% of the total eligible employees.</li>
 
 
-__*Mentoship Eligibility*__
+<b><i>Mentoship Eligibility</b></i>
 ![mentorship eligibility](https://github.com/bedwardssmith/Pewlett-Hackard-Analysis/blob/main/Analysis_Projects_Folder/Pewlett_Hackard_Analysis_Folder/Data/mentorship_eligibility.csv)
 
 
-## Summary
+<h2>Summary</h2>
 
 * Figure 1 shows a summary of current employees, by title, that were born between the years 1952 and 1955.  The results are concerning given the substantial number of individuals in senior roles, 29,414 Senior Engineer and 28,254 Senior Staff, that are eligible for retirement.  However, in order to fully understand the impact we need to understand the number of current employees within these roles that are not eligible for retirement which is reflected in figure 2. This table shows us that 33,650 Senior Engineers and 52,263 Senior Staff are ineligible for retirement.  With this additional information, we can see that the number of Senior Engineers eligible for retirement accounts for 47% of the Senior Engineer headcount, whereas, the number of Senior Staff accounts for only 35%.  These percentages are cause for further analysis.
 
