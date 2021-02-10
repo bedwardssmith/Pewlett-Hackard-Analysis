@@ -20,7 +20,7 @@ __Senior Staff__
 Similiar to the analysis for Senrior Engineers we look to the tables to determine if there are a sufficient number of Staff ineligible for retirement that through normal career progression will be sufficient to replace the retiring Senior Staff.  The tables show us that while there are 12,243 Staff eligible for retirement there are 41,212 Staff that are ineligible for retirement.  Therefore, once again we would assume that there are current resources that will replace the retiring Senior Staff.
 
 
-__*Figure 1__
+__*Figure 1*__
 
 ![eligible for retirement by titles](https://github.com/bedwardssmith/Pewlett-Hackard-Analysis/blob/main/Analysis_Projects_Folder/Pewlett_Hackard_Analysis_Folder/Data/retiring_titles_sum.png)
 
@@ -38,10 +38,14 @@ The above analysis focused only on job levels, whereas, it is also important to 
 
 
 __*Figure 3*__
+
+
 ![eligible for retirement by department](https://github.com/bedwardssmith/Pewlett-Hackard-Analysis/blob/main/Analysis_Projects_Folder/Pewlett_Hackard_Analysis_Folder/Data/retiring_dept_sum.png)
 
 
 __*Figure 4*__
+
+
 ![ineligible for retirement by department](https://github.com/bedwardssmith/Pewlett-Hackard-Analysis/blob/main/Analysis_Projects_Folder/Pewlett_Hackard_Analysis_Folder/Data/ineligible_dept_sum.png)
 
 
