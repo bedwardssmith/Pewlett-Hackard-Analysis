@@ -9,8 +9,7 @@ Pewlett-Hackard has realized that they are facing a period where they will exper
 </ul>
 <h2>Results</h2>
 <b>Count per title of employees eligible for retirement - Figure 1</b><br>
-<br>
-The count per title of employees eligible for retirement provides a summary of current employees, by title, that were born between the years 1952 and 1955.  Three points can be drawn from this analysis.
+<p>The count per title of employees eligible for retirement provides a summary of current employees, by title, that were born between the years 1952 and 1955.  Three points can be drawn from this analysis.</p>
 <ul>
 <li>There are 29,414 Senior Engineers eligible for retirement which is a significant and alarming number.  Given this number further analysis is required to determine whether there are sufficient resources at the Engineer level that, through career progression, will grow to fulfill future resource requirements. </li>
 <li>In addition to the large number of Senior Engineers eligible for retirement we can see that 28,254 Senior Staff are eligible for retirement; once again an alarming number requiring further analysis.</li>
@@ -19,7 +18,7 @@ The count per title of employees eligible for retirement provides a summary of c
 <br>
 <b>Employees eligible for the mentorship program</b>
 <br>
-In addition to the retirement by title summary a table was created comprising of current employees that were born in 1965; employees eligible for the mentorship program.  
+<p>In addition to the retirement by title summary a table was created comprising of current employees that were born in 1965; employees eligible for the mentorship program.</p>
 <br>
 <ul>
 <li> This table shows us that the number of employees eligible for the mentorship program based on current criteria is 1,549 which is only 1.7% of the employees eligible for retirement.
@@ -31,18 +30,14 @@ In addition to the retirement by title summary a table was created comprising of
 <br>
 <p>In order to better understand the impacts of the above findings three additional summaries were created which are reflects below; employees ineligible for retirement summarized by title (figure 2), employees eligible for retirement summarized by department (figure 3) and employee’s ineligible for retirement summarized by title (figure 4).  All of which are shown below.</p>
 <br>
-<br>
 <b>Senior Engineer</b>
 <p>As noted above there are 29,414 Senior Engineers eligible for retirement, however, we see from the summary below that there are 63,412 Engineers ineligible for retirement.  Therefore, assuming normal career progression there are current resources that will replace the headcount of those Senior Engineers that choose to retire.</p>
-<br>
 <br>
 <b>Senior Staff</b>
 <p>Similar to the analysis for Senior Engineers although there are 28,254 Senior Staff eligible for retirement, there are 52,263 Senior Staff and 41,212 staff ineligible for retirement.  Assuming normal career progression there are current resources that will replace the headcount of those Senior Staff that choose to retire.</p>
 <br>
-<br>
 <b> Departmental Analysis</b>
 <p>The departmental analysis includes summaries, by department, of employees both eligible for retirement and ineligible for retirement.  In looking at this analysis we see that the number of employees eligible for retirement represent an equal percentage to total employees per department with no department experiencing a greater impact than another.  However, due to the number of employees eligible for retirement in both Development and Production these departments are likely to experience the greatest impact.</p>
-<br>
 <br>
 <p>In summary the above shows us that while there are a large number of employees eligible for retirement there are sufficient remaining employees, assuming normal career progression, that can replace the vacant roles due to retirements.  However, there are two caveats to this.  The first being that there must be a sufficient number of new hires, across disciplines, to allow for continued growth and the mentorship program being contemplated must be expanded.  The mentorship program, as contemplated, is focused on new hires whereas the analysis shows that there also needs to be a focus on Senior Staff and Engineers to ensure that normal career progression occurs.   In order to be successful the criteria must also be changed to allow more individuals to participate.</p>
 <br>
