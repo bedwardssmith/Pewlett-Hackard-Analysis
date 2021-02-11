@@ -7,9 +7,8 @@
 <li>PostgreSQL version 13</li>
 <li>Data – titles.cvs, dept_emp.cvs, dept_manager.cvs, employees.cvs, salaries.cvs, titles.cvs</li>
 </ul>
-<br>
 <h2>Results</h2>
-The initial analysis consisted of two parts.  The first being a summary of current employees born between the years 1952 and 1955 by grouped by title.  The second consisted of current employees born in 1965 for which Pewlett Hackard is contemplating their participation in a mentorship program for new hires.</p>
+<p>The initial analysis consisted of two parts.  The first being a summary of current employees born between the years 1952 and 1955 by grouped by title.  The second consisted of current employees born in 1965 for which Pewlett Hackard is contemplating their participation in a mentorship program for new hires.</p>
 <br>
 <b>Employees Eligible for Retirement Summarized by Title</b>
 <br>
@@ -23,13 +22,12 @@ The initial analysis consisted of two parts.  The first being a summary of curre
 <br>
 
 <b>Employees Eligible for Mentorship Program</b>
-<br>
 <ul>
 <li>The <a href=” https://github.com/bedwardssmith/Pewlett-Hackard-Analysis/blob/main/Analysis_Projects_Folder/Pewlett_Hackard_Analysis_Folder/Data/mentorship_eligibility.csv">table</a> provides a list of all employees eligible for the mentorship program, as currently contemplated.  The total of which is 1,549 which represents only 1.7% of the employees eligible for retirement.  Currently the contemplated program is focused on new hires, however, as can be seen in the analysis above there also needs to be emphasis placed on resources at the Staff and Engineer level.  It is these resources that will be relied upon to meet the resource requirements at both the Senior Engineer and Senior Staff level as the “silver tsunami” occurs.</li>
 </ul>
 <br>
 <h2>Summary</h2>
-<p>Based on the results, noted above, from the original queries three additional queries were made; number of current employees ineligible for retirement by title, number of current employees eligible for retirement by department and number of current employees ineligible for retirement by department.</p>
+<p>Based on the results, noted above, three additional queries were made; number of current employees ineligible for retirement by title, number of current employees eligible for retirement by department, and number of current employees ineligible for retirement by department.</p>
 <br>
 <b>Employees Ineligible for Retirement Summarized by Title</b>
 <ul>
