@@ -50,8 +50,7 @@
 </ul>
 <br>
 <img scr="https://github.com/bedwardssmith/Pewlett-Hackard-Analysis/blob/main/Analysis_Projects_Folder/Pewlett_Hackard_Analysis_Folder/Data/retiring_dept_sum.png"  align=”middle">
-<br>
-<p>The analysis shows that there are sufficient resources going forward, however, the mentorship program as currently contemplated does not provide a sufficient number of individuals for the program based on the number of employees eligible for retirement.  The elgibility year would need to be expanded to increase the number of participants in addition to a possible expansion of the program such as Senior Engineers mentoring Engineers with Engineers mentoring newer staff. 
+<p>The analysis shows that there are sufficient resources going forward, however, the mentorship program as currently contemplated does not provide a sufficient number of individuals for the program based on the number of employees eligible for retirement.  The elgibility year would need to be expanded to increase the number of participants in addition to a possible expansion of the program such as Senior Engineers mentoring Engineers with Engineers mentoring newer staff.</p>
 
 
 
